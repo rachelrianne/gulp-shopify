@@ -29,4 +29,7 @@ This starter theme is based off of:
 - [StyleLint Docs](https://stylelint.io/user-guide)
 - From Gulp + Shopify README: "You may also write your JavaScript in ES6 &ndash; The Gulp scripts task uses [Babel](https://babeljs.io/ "Babel website"), so you can use the latest syntax without worrying about browser support."
 - In Terminal `cd` into the `dev` directory and install the Gulp packages (if you haven’t already installed Gulp, you’ll need to [do so](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md "Gulp installation") first):
+- (ECMA 6 browser support (just in case someone asks))[https://kangax.github.io/compat-table/es6/]
 
+## Coming Up: 
+- Better JS directory modular system

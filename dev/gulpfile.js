@@ -50,7 +50,10 @@ gulp.task('scss', gulp.series('stylelint', () => {
  */
 const jsFiles = [
     // './node_modules/babel-polyfill/dist/polyfill.js',
-    srcJS,
+    // srcJS,
+    'js/vendors.js',
+    'js/slate.js',
+    'js/theme.js'
 ];
 
 gulp.task('js', () => {
