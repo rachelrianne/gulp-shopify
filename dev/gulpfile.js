@@ -8,7 +8,8 @@ const concat = require('gulp-concat');
 const rename = require("gulp-rename");
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
-const scsslint = require('gulp-scss-lint');
+const gulpStylelint = require('gulp-stylelint');
+const cleanCSS = require('gulp-clean-css');
 
 /**
  * Asset paths.
@@ -20,19 +21,25 @@ const assetsDir = '../assets/';
 /**
  * Scss lint
  */
-gulp.task('scss-lint', () => {
+gulp.task('stylelint', () => {
     return gulp.src(srcSCSS)
-        .pipe(scsslint());
+        .pipe(gulpStylelint({
+          reporters: [
+            {formatter: 'string', console: true}
+          ],
+          fix: true
+        }));
 });
 
 /**
  * SCSS task
  */
-gulp.task('scss', gulp.series('scss-lint', () => {
+gulp.task('scss', gulp.series('stylelint', () => {
     return gulp.src('scss/theme.scss.liquid')
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({ cascade : false }))
-        .pipe(rename('theme.scss.liquid'))
+        // .pipe(autoprefixer({ cascade : false }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(rename('theme.min.css.liquid'))
         .pipe(gulp.dest(assetsDir));
 }));
 
