@@ -1,0 +1,79 @@
+/*================ Theme Elements ================*/
+
+// section.page-intro { h1 {} }
+
+// .page-navigation {}
+
+// ol.pagination {}
+
+// .a11y-drawer {
+//   padding: 0;
+//   border-top: 1px solid $border-lt-green;
+//   border-bottom: 1px solid $border-lt-green;
+//   + .a11y-drawer {
+//     border-top: none;
+//   }
+
+//   button.drawer-title {
+//     background: transparent;
+//     width: 100%;
+//     height: auto;
+//     border: none;
+//     border-radius: 0;
+//     padding: 25px 0;
+//     display: block;
+//     -webkit-appearance: none;
+//     @include ease();
+//     &:hover,
+//     &:focus {
+//       background: rgba($bg-lt-green, 0.5);
+//     }
+//     &:focus {
+//       outline: none;
+//     }
+//     > * {
+//       color: $dk-green;
+//       text-align: left;
+//       margin: 0;w
+//       position: relative;
+//     }
+//     .icon {
+//       width: 15px;
+//       height: auto;
+//       position: absolute;
+//       right: 0;
+//       top: 10px;
+//       @include ease(transform);
+//         transform: rotate(180deg);
+//     }
+//     &[aria-expanded="true"] {
+//       .icon {
+//         transform: rotate(0deg);
+//       }
+//     }
+//   }
+//   .drawer-content {
+//     max-height: 100em;
+//     opacity: 1;
+//     visibility: visible;
+//     display: block;
+//     overflow: hidden;
+//     @include ease();
+
+//     .content-wrap {
+//       padding: 15px 0 30px;
+//     }
+
+//     p {
+//       font-size: 14px;
+//       line-height: 1.57;
+//     }
+
+//     &[aria-hidden=true] {
+//       max-height: 0;
+//       display: block;
+//       opacity: 0;
+//       visibility: hidden;
+//     }
+//   }
+// }

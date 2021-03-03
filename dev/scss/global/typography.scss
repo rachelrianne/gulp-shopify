@@ -1,0 +1,81 @@
+/*================ General typography styles ================*/
+html, body {
+  background: $color-body;
+  // font-family: [place font-family here];
+  color: $color-body-text;
+}
+h1, .h1 {
+  // font-family: [place font-family here];
+  margin-bottom: .875em;
+}
+h2, .h2 {
+  // font-family: [place font-family here];
+  margin-bottom: .667em;
+}
+
+h3, .h3 {
+  // font-family: [place font-family here];
+  margin-bottom: .5em;
+}
+
+h4 {
+  // font-family: [place font-family here];
+  margin-bottom: .5em;
+}
+
+h5 {
+  // font-family: [place font-family here];
+  margin-bottom: .5em;
+}
+
+h6 {
+  // font-family: [place font-family here];
+  margin-bottom: .5em;
+}
+
+p {
+  // font-family: [place font-family here];
+  margin-bottom: 1.333333333em;
+  // &.small {}
+}
+ul, ol {
+  // font-family: [place font-family here];
+  margin-bottom: 1.333333333em;
+  li {
+    margin-bottom: 0.125em;
+  }
+}
+
+a {
+  @include ease();
+  text-decoration: underline;
+  // &:hover {}
+}
+
+hr {
+  // border-color: [place color here];
+  margin-bottom: 1.333333333em;
+}
+
+b, strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+blockquote {
+  padding-left: 40px;
+  border-left: 2px solid;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* Typography Helper Classes */
+.money {
+  .sale-price {
+    color: #e45200;
+  }
+}
+.sold-out {
+  font-weight: 600;
+}

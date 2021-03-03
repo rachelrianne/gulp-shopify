@@ -1,0 +1,54 @@
+<section
+  data-section-type="image-with-text-overlay"
+  data-section-id="{{ section.id }}"
+>
+  {% if section.settings.title != blank %}
+    <h2>{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if section.settings.textarea != blank %}
+    <p>{{ section.settings.textarea }}</p>
+  {% endif %}
+
+  {% if block.settings.image != blank %}
+    <img 
+      sizes="100vw"
+      data-src="{{ block.settings.image | img_url: '800x' }}"
+      data-srcset="{{ block.settings.image | img_url: '800x' }} 1x,
+        {{ block.settings.image | img_url: '1600x' }} 2x"
+      class="lazyload lazyload--fade-in"
+      alt="{{ block.settings.image.alt | escape }}" 
+    />
+  {% else %}
+    {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--large' }}
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Image with text overlay",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "textarea",
+        "label": "Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with text overlay",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

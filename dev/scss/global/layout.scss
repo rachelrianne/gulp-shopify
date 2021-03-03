@@ -1,4 +1,7 @@
 /*================ General layout styles ================*/
+html {
+  scroll-behavior: smooth;
+}
 body,
 html {
   background-color: $color-body;
@@ -9,4 +12,21 @@ html {
   max-width: $width-site;
   padding: 0 $gutter;
   margin: 0 auto;
+  &.max-w-lg {
+    max-width: 1040px;
+  }
+  &.max-w-md {
+    max-width: 780px;
+  }
+  &.max-w-sm {
+    max-width: 680px;
+  }
+}
+section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  @include media-query(medium-up) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
 }

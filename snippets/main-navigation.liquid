@@ -1,0 +1,26 @@
+<nav class="flex--item" role="navigation" aria-label="Main Navigation">
+  <ul class="site-nav">
+    {% for link in linklists[section.settings.main_linklist].links %}
+      {%- assign child_list_handle = link.title | handleize -%}
+      {% if menus[child_list_handle].links != blank %}
+        <li class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
+          <button class="site-nav__link" aria-expanded="false" aria-controls="{{ link.title | escape | downcase | handlize }}-dropdown">
+            {{ link.title }}
+          </button>
+
+          <ul class="site-nav__submenu" id="{{ link.title | escape | downcase | handlize }}-dropdown">
+            {% for childlink in menus[child_list_handle].links %}
+              <li {% if childlink.active %}class="site-nav--active"{% endif %}>
+                <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li {% if link.active %}class="site-nav--active"{% endif %}>
+          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
